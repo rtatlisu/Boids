@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
+    [Range(0, 0.2f)]
+    public float boidSpeed;
     public int rows;
     public int columns;
     public int numOfBoids;

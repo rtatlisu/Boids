@@ -30,7 +30,7 @@ public class Boid : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, q, singleStep);
 
    */
-        // transform.position += transform.up * 0.08f;
+        transform.position += transform.up * GameController.instance.boidSpeed;
 
 
         WrapAround();
@@ -92,6 +92,7 @@ public class Boid : MonoBehaviour
 
     public Vector2 DirFromAngle(float angleInDegrees)
     {
+        angleInDegrees -= transform.eulerAngles.z;
         return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 

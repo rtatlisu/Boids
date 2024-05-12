@@ -10,7 +10,7 @@ public class BoidEditor : Editor
     {
         Boid boid = (Boid)target;
         Handles.color = Color.white;
-        Handles.DrawWireCube(boid.transform.position, new Vector2(boid.viewRadius, boid.viewRadius));
+        //Handles.DrawWireCube(boid.transform.position, new Vector2(boid.viewRadius, boid.viewRadius));
         Vector3 viewAngleA = boid.DirFromAngle(-boid.viewAngle / 2);
         Vector3 viewAngleB = boid.DirFromAngle(boid.viewAngle / 2);
 
@@ -28,7 +28,7 @@ public class BoidEditor : Editor
 
                 if (angle < boid.viewAngle / 2)
                 {
-                    Handles.DrawLine(boid.transform.position, boid.neighbors[i].transform.position);
+                    Handles.DrawLine(boid.transform.position, boid.neighbors[i].transform.position, 5);
                 }
             }
         }
