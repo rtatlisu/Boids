@@ -76,36 +76,13 @@ public class GameController : MonoBehaviour
             foreach (GameObject boid in pair.Value)
             {
                 neighbors = FindNeighbors(boid);
+                boid.GetComponent<Boid>().neighbors = neighbors;
                 boid.GetComponent<Boid>().Separation();
             }
         }
     }
 
-    private void DrawGrid()
-    {
-        int lineOffset = 3;
-        int numLinesX = 2 * Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x);
-        numLinesX = Mathf.FloorToInt(numLinesX / (float)lineOffset);
 
-        int numLinesY = 2 * Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y);
-        numLinesY = Mathf.FloorToInt(numLinesY / (float)lineOffset);
-
-
-        int iterator = 0;
-        while (minBounds.x + (iterator * lineOffset) < maxBounds.x)
-        {
-            iterator++;
-            Debug.DrawLine(new Vector2(minBounds.x + (lineOffset * iterator), minBounds.y),
-            new Vector2(minBounds.x + (lineOffset * iterator), maxBounds.y), Color.white);
-        }
-        iterator = 0;
-        while (minBounds.y + (iterator * lineOffset) < maxBounds.y)
-        {
-            iterator++;
-            Debug.DrawLine(new Vector2(minBounds.x, minBounds.y + (lineOffset * iterator)),
-            new Vector2(maxBounds.x, minBounds.y + (lineOffset * iterator)), Color.white);
-        }
-    }
 
     private void AssignBoidsToGrid()
     {

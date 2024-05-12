@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Boid : MonoBehaviour
 {
+    public float viewRadius;
+    public float viewAngle;
+    public List<GameObject> neighbors;
     // Start is called before the first frame update
     void Start()
     {
-
+        neighbors = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -27,10 +30,12 @@ public class Boid : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, q, singleStep);
 
    */
-        transform.position += transform.up * 0.08f;
+        // transform.position += transform.up * 0.08f;
 
 
         WrapAround();
+
+
 
     }
 
@@ -74,6 +79,20 @@ public class Boid : MonoBehaviour
     public void Separation()
     {
 
+    }
+
+    private float CalculateVisionTreshold(int visionConeAngle)
+    {
+        //    print("1 " + (visionConeAngle / 2f));
+        //   print("2 " + Mathf.Deg2Rad * (visionConeAngle / 2f));
+        //  print("3 " + Mathf.Cos(Mathf.Deg2Rad * (visionConeAngle / 2f)));
+        return Mathf.Cos(180 / 2f * Mathf.Deg2Rad);
+
+    }
+
+    public Vector2 DirFromAngle(float angleInDegrees)
+    {
+        return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
 
