@@ -29,6 +29,23 @@ This is a simplified 2D project and here are some insights of the internal worki
 Visualization of view angle and neighbor-detection<br>
 
 ![](https://github.com/rtatlisu/Boids/blob/main/BoidGif1.gif)
+<br>
+<br>
+Default behavior
+
+![](https://github.com/rtatlisu/Boids/blob/main/BoidGif2.gif)
+<br><br>
+Separation
+
+![](https://github.com/rtatlisu/Boids/blob/main/BoidGif5.gif)
+<br><br>
+Separation + Alignment
+
+![](https://github.com/rtatlisu/Boids/blob/main/BoidGif3.gif)
+<br><br>
+Separation + Alignment + Cohesion
+
+![](https://github.com/rtatlisu/Boids/blob/main/BoidGif4.gif)
 
 
 
