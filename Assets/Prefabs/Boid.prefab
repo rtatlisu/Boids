@@ -97,3 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7021cae8151804b58b7d2245fcf5e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewRadius: 3
+  viewAngle: 240
+  currentCell: {x: 0, y: 0}
+  updateCells: 0
+  neighbors: []

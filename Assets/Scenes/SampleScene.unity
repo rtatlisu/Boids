@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 35
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: viewRadius
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
+      propertyPath: steerAwayRatio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
+      propertyPath: steerAwaySpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3271725898493159128, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_Name
       value: Boid (1)
@@ -245,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -332,12 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f895359bb454897976374b7c375a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quadPrefab: {fileID: 9067667267765396551, guid: 67f04f7e3349041a3b42fd82b7ded88c, type: 3}
-  boidPrefab: {fileID: 3271725898493159128, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
-  topLimit: 0
-  bottomLimit: 0
-  leftLimit: 0
-  rightLimit: 0
 --- !u!1001 &996395845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,11 +350,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: viewAngle
-      value: 120
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: viewRadius
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
+      propertyPath: steerAwayRatio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4580464207292010350, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
+      propertyPath: steerAwaySpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3271725898493159128, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_Name
@@ -372,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -380,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4241995
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -392,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.9055688
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -404,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441070938782937, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -129.8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -441,11 +451,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidSpeed: 0.08
+  separationStrength: 5
+  turnSpeed: 2
   rows: 20
   columns: 20
-  numOfBoids: 10
+  numOfBoids: 50
   boidPrefab: {fileID: 3271725898493159128, guid: 9a8750614dc7d448c9c9cc2ddb5b8f3f, type: 3}
-  cellSize: 5
+  cellSize: 6
+  separation: 0
+  alignment: 0
+  cohesion: 0
+  separationRadius: 10
+  alignmentRadius: 6
+  cohesionRadius: 6
   neighbors: []
 --- !u!4 &1711719755
 Transform:
